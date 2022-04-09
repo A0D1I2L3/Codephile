@@ -22,7 +22,7 @@ async def on_message(message):
         MyEmbed.add_field(name="project Name",value="project pseudobot",inline=False)
         MyEmbed.add_field(name="Date released",value="Tomorrow",inline=False)
         MyEmbed.set_footer(text="Heheheeheheheh")
-        MyEmbed.set_author(name="@A0D1I2L3#1746")
+        
 
 
 
