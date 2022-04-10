@@ -1,6 +1,4 @@
-# Codephile
+# Codephile :trollface:
 
-- Codephile is a bot that does nothing special right now 
+- Codephile is a bot that does nothing special right now
 - i just work on it to learn github and discordpy module
-
-
