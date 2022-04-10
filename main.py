@@ -1,8 +1,9 @@
 from venv.variables import *
 import discord
 from discord.ext import commands
+from random import randint
 
-client=commands.Bot(command_prefix="?")
+client=commands.Bot(command_prefix="cd ")
 
 
 @client.command(name="version")
@@ -16,16 +17,24 @@ async def version(context):
 
     await context.message.channel.send(embed=MyEmbed)
     
-        
+@client.command(name="dice")
+async def version(context):
+    i=randint(1,6)
+    await context.message.channel.send("Bot rolled :game_die:  " + str(i))
+    
 
-@client.event
-async def on_ready():
-    general_channel = client.get_channel(947433833660317709)
-
-    await general_channel.send('Bot online')  
+@client.command(name="status")
+async def test(context):
+    await context.message.channel.send('Bot online')  
 
 
+@client.command(name="welp")
+async def help(context):
+    myEmbed=discord.Embed(title="Codephile",description=" All The Commands for Codephile",colour=0x00FF00)
+    myEmbed.add_field(name=":robot: General",value="`cd status`:- Display bot status \n `cd version`:- Display bot version",inline=False,)
+    myEmbed.add_field(name=":sparkles: Fun",value="`cd dice`:- Bot will roll a dice for you",inline="False")
 
+    await context.message.channel.send(embed=myEmbed)
 
 client.run(TOKEN)
 
